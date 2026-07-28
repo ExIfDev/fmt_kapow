@@ -2,7 +2,7 @@
 Script for Noesis Viewer/unpacker for TotalOverdose.
 
 
-Support for: .main, .playerdata, .mission, .submap, .model
+Support for: .map, .main, .playerdata, .mission, .submap, .model
 
 .kpwtex is an intermediate texture format created specifically for this addon.
 
