@@ -9,7 +9,7 @@ import os
 
 
 def registerNoesisTypes():
-    for ext in [".main", ".playerdata", ".mission", ".submap"]:
+    for ext in [".main", ".playerdata", ".mission", ".submap", ".map"]:
         handle = noesis.register("Kapow Engine Compiled Asset", ext)
         noesis.setHandlerTypeCheck(handle, ChkPak)
         noesis.setHandlerExtractArc(handle, LoadPak)
@@ -63,12 +63,21 @@ def ChkMdl(data):
 def ChkPak(data):
     bs = NoeBitStream(data)
     if len(data) >28:
+        bs.seek(37)
+        if bs.readUShort() == 0x7F90:
+            return 1
+        
+        
+        
         bs.seek(28,NOESEEK_ABS)
         bs.seek(bs.readInt()-4,NOESEEK_REL)
         val = bs.readBytes(6)
         if val == b"/data/":
             return 1 
         else: return 0
+        
+        
+        
     else: return 0
     
     
@@ -97,6 +106,12 @@ def LoadPak(fileName, fileLen, justChecking):
     noesis.logPopup()
     if justChecking:
         return 1 
+    
+    if rapi.getInputName().endswith(".map"):
+        bs.seek(0x12B)
+        td = bs.readBytes(len(data)-bs.tell())
+        bs = NoeBitStream(td)
+    
     TS = bs.readUInt()
     PCHKSUM = bs.readUInt()
     CCHKSUM = bs.readUInt()
