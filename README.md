@@ -1,5 +1,5 @@
 # fmt_kapow
-Viewer/unpacker for TotalOverdose.
+Script for Noesis Viewer/unpacker for TotalOverdose.
 
 
 Support for: .main, .playerdata, .mission, .submap, .model
