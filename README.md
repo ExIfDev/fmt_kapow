@@ -24,3 +24,5 @@ designed for the CD version of the game, GoG may have issues
 5) Doubleclick on overdose.main and it will show an extraction prompt, click Extract
 6) Navigate to the newly created folder (eg. overdose_files)
 7) Open any .model or .kptex to view it
+
+<img width="1227" height="1341" alt="image" src="https://github.com/user-attachments/assets/2a95f155-21a7-45e5-9664-944f966a0ae1" />
