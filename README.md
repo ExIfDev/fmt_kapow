@@ -8,8 +8,6 @@ Support for: .map, .main, .playerdata, .mission, .submap, .model
 
 Full Animation support
 
-designed for the CD version of the game, GoG may have issues
-
 
 # installation
 
