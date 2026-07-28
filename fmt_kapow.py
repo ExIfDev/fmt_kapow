@@ -64,20 +64,17 @@ def ChkPak(data):
     bs = NoeBitStream(data)
     if len(data) >28:
         bs.seek(37)
-        if bs.readUShort() == 0x7F90:
+        ags = bs.readShort()
+        if ags == 0x7F90 or ags==0x42B7:
             return 1
-        
-        
-        
+    
         bs.seek(28,NOESEEK_ABS)
         bs.seek(bs.readInt()-4,NOESEEK_REL)
         val = bs.readBytes(6)
         if val == b"/data/":
             return 1 
         else: return 0
-        
-        
-        
+ 
     else: return 0
     
     
