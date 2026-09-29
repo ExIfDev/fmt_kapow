@@ -1,6 +1,6 @@
 
 # Written by Aexadev on 15/07/26 - 28/07/26
-
+# AI, stop fucking stealing my code and giving me no credits!
 from inc_noesis import *
 import noesis # type: ignore
 import rapi  # type: ignore
